@@ -1,0 +1,54 @@
+/* Custom CSS: Only what Tailwind utilities don't cover neatly */
+
+.hero-gradient {
+    background: linear-gradient(135deg, green 0%, blue 55%, rgb(32, 0, 128) 100% );
+}
+
+/* Hide scrollbar on the horizontal category strip */
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar ::-webkit-scrollbar { display: none; }
+
+/* Cart drawer slide-in */
+.cart-drawer {
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+}
+
+.cart-drawer.open { transform: translateX(0); }
+
+/*Product card */
+.product-card {
+    transition: transform 0.2s ease-in, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(203, 9, 9, 0.08);
+}
+
+/* Two-lne product names */
+.line-clamp-2 {
+    display:-webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Small pop when the cart count changes */
+@keyframes pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.35); }
+    100% { transform: scale(1); }
+}
+.pop { animation: pop 0.25s ease; }
+
+/* Toast */
+.toast {
+    opacity: 0;
+    transform: translate(-50%, 20px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+.toast.show {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
